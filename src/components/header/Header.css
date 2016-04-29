@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.header{
+	position:relative;
+	text-align:center;
+	font-size:0.48rem;
+	color:#fff;
+	line-height:1.066667rem;
+	background: linear-gradient(to top right, #fd3b59, #ff583b);
+}
+
+.icons{
+	display:inline-block;
+	vertical-align: -3px;
+	background: url('imgs/back.png') no-repeat center;
+}
+.goBackIcon{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 77px;
+    width: 83px;
+}
