@@ -20,7 +20,7 @@ export default class AppHeader extends Component{
 		return(
 			<header className="header">
 				<i className="goBackIcon icons" onClick = { this.goBackHandler }></i>
-				{this.props.title} : { this.state.title2 }
+				{this.props.title} : [{ this.state.title2 }]
 			</header>
 		)
 	}
