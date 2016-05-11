@@ -1,0 +1,13 @@
+@import "../../css/common.scss";
+
+.cld-wraper{
+	font-size: $wraperFontSize;
+	text-align: center;
+	line-height: 3;
+}
+.cld-header{
+	i{
+		display: inline-block;
+		margin: 0 0.2rem;
+	}
+}

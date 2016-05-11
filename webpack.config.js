@@ -10,12 +10,15 @@ process.env.BABEL_ENV = TARGET;
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
-    srcJs: path.join(__dirname, 'src/js'),
     srcCss: path.join(__dirname, 'src/css'),
     dist: path.join(__dirname, 'dist'),
     static: path.join(__dirname, 'dist/static'),
     devSrc: path.join(__dirname, 'build'),
 }
+
+const normalizePath   = path.join(nodeRoot, 'normalize.css');
+const fontawesomePath = path.join(nodeRoot, 'font-awesome');
+
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -30,7 +33,7 @@ module.exports = {
         port: process.env.PORT
     },
     entry: {
-        test: path.resolve(PATHS.srcJs, 'test'),
+        test: path.resolve(PATHS.src, 'test'),
         common: ['react', 'react-dom']
     },
     output: {
@@ -39,8 +42,12 @@ module.exports = {
         publicPath: 'static/'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx'],
-        root: __dirname
+        extensions: ['', '.js', '.jsx', '.css', '.scss'],
+        root: __dirname,
+        alias:{
+            normalize: path.resolve(normalizePath, 'normalize.css'),
+            fontAwesome: path.resolve(fontawesomePath, 'css/font-awesome.min.css')
+        }
     },
     module: {
         loaders: [{
@@ -50,15 +57,15 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: 'style!css',
-            include: PATHS.src
+            include: [PATHS.src, normalizePath, fontawesomePath]
         }, {
             test: /\.scss$/,
             loader: 'style!css!sass',
             include: PATHS.src
         }, {
-            test: /\.(png|jpg)$/,
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url?limit=25000',
-            include: PATHS.src
+            include: [PATHS.src, fontawesomePath]
         }],
         noParse: ['react', 'react-dom']
     },

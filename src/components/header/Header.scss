@@ -1,8 +1,10 @@
 @charset "UTF-8";
+@import "../../css/common.scss";
+
 .header{
 	position:relative;
 	text-align:center;
-	font-size:0.48rem;
+	font-size:$wraperFontSize;
 	color:#fff;
 	line-height:1.066667rem;
 	background: linear-gradient(to top right, #fd3b59, #ff583b);
