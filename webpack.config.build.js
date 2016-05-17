@@ -19,7 +19,7 @@ const fontawesomePath = path.join(nodeRoot, 'font-awesome');
 
 module.exports = {
 	entry:{
-        test:path.resolve(PATHS.src, 'test'),
+        index:path.resolve(PATHS.src, 'index'),
         common: ['react', 'react-dom']
     },
 	output:{
@@ -59,7 +59,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new HtmlWebpackPlugin({
             template: './src/test.html',       
-            filename:path.resolve(PATHS.dist,'test.html'), 
+            filename:path.resolve(PATHS.dist,'index.html'), 
             inject: 'body',
             hash:false,
             minify:{                         

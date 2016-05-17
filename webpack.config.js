@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const nodeRoot = path.join(__dirname, 'node_modules');
 
@@ -19,7 +18,6 @@ const PATHS = {
 const normalizePath   = path.join(nodeRoot, 'normalize.css');
 const fontawesomePath = path.join(nodeRoot, 'font-awesome');
 
-
 module.exports = {
     devtool: 'eval-source-map',
     devServer: {
@@ -33,7 +31,7 @@ module.exports = {
         port: process.env.PORT
     },
     entry: {
-        test: path.resolve(PATHS.src, 'test'),
+        index: path.resolve(PATHS.src, 'index'),
         common: ['react', 'react-dom']
     },
     output: {

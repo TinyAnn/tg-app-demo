@@ -11,7 +11,7 @@ export default class Rebate extends Component{
 	}
 
 	handleClick(){
-		alert(222)
+		window.location.hash='/assertshow'
 	}
 
 	render(){

@@ -88,7 +88,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1b7e5f9eb2b283c70d9c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a94a9902e545df363672"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -611,7 +611,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"test"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"index"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

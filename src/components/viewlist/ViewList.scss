@@ -1,13 +1,10 @@
 @charset "UTF-8";
-
-$grey:#aaa;
-$greyBorder:1px solid $grey;
-$btnRed: #c00;
-
+@import "../../css/common.scss";
 
 .viewList{
-	font-size: 28px;
+	font-size: 32px;
 	padding: 0px;
+	margin-top: 10px;
 }
 .vl-lis{
 	list-style: none;
