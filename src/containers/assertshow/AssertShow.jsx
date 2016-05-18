@@ -15,17 +15,15 @@ export default class AssertShow extends Component{
 	}
 
 	componentDidMount(){
-		var _this = this
-
 		fetch('../data/asset.json')
-			.then(function(response) {
+			.then((response) => {
 		        if (response.status >= 400) {
 		            throw new Error("Bad response from server")
 		        }
 		        return response.json();
 		    })
-		    .then(function(viewList) {
-		        _this.setState({
+		    .then((viewList)=>{
+		        this.setState({
 		        	viewList: viewList
 		        })
 		    })

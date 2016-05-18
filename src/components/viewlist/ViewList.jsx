@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class ViewList extends Component{
 	render(){
 		var list = this.props.listData.map(function(item, index){
-			var linkValue = item.type === '1'?'一键出租':'一键卖房'; 
+			var linkValue = item.type === '1'?'一键出租':'一键卖房' 
 			return (
 				<li key={ index } className='vl-lis'> 
 					<div className = 'vl-line'> 
@@ -15,7 +15,7 @@ export default class ViewList extends Component{
 					<div className = 'vl-aside'>
 						<div className = 'vl-a-line'>{ item.count } ></div>
 						<div className = 'vl-a-line'>
-							<Link to="/rebate">{ linkValue }</Link>
+							{ linkValue }
 						</div>
 					</div>
 				</li>

@@ -58,14 +58,14 @@ module.exports = {
     plugins:[
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new HtmlWebpackPlugin({
-            template: './src/test.html',       
+            template: './src/index.html',       
             filename:path.resolve(PATHS.dist,'index.html'), 
             inject: 'body',
             hash:false,
-            minify:{                         
+            /*minify:{                         
                 removeComments:true,         
                 collapseWhitespace:true,     
-            },
+            },*/
             favicon:'./src/imgs/fish.jpg'
         }),
         new ExtractTextPlugin("styles.[hash].css")

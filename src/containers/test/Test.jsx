@@ -1,18 +1,14 @@
 import React,{ Component } from 'react'
 
+import { Link } from 'react-router'
 import TabHeader from '../../components/tabheader/TabHeader'
 
 export default class Test extends Component{
 	render(){
-		let tabs = [{
-				name:'tab1'
-			},{
-				name:'tab2' 
-			}];
-
 		return (
 			<div>
-				<TabHeader tabs={ tabs }/>
+				<Link to={'/rebate'} >rebate</Link><br />
+				<Link to={'/assertshow'} >assertshow</Link><br />
 			</div>
 		)
 	}
