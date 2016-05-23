@@ -30,7 +30,7 @@ export default class AssertShow extends Component{
 	}	
 
 	gobackHandler(){
-		window.location.hash='/rebate'
+		window.location.hash='/'
 	}
 
 
@@ -69,7 +69,7 @@ export default class AssertShow extends Component{
 				name:'tab1'
 			},{
 				name:'tab2' 
-			}];
+			}]
 
 		return (
 			<div>

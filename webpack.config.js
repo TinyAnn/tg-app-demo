@@ -1,6 +1,6 @@
-const path = require('path');
+const path    = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const merge   = require('webpack-merge');
 
 const nodeRoot = path.join(__dirname, 'node_modules');
 
@@ -69,6 +69,7 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 }

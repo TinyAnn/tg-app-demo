@@ -68,6 +68,11 @@ module.exports = {
             },*/
             favicon:'./src/imgs/fish.jpg'
         }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress:{
+                warnings:false
+            }
+        }),
         new ExtractTextPlugin("styles.[hash].css")
     ]
 }

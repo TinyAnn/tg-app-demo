@@ -11,13 +11,13 @@ export default class Rebate extends Component{
 	}
 
 	handleClick(){
-		window.location.hash='/assertshow'
+		window.location.hash='/'
 	}
 
 	render(){
 		return (
 			<div>
-				<Header title='代收返佣' onClick = { this.handleClick } />
+				<Header title='代收返佣' onClick = { this.handleClick }/>
 				<Calendar />
 			</div>
 		)
