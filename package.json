@@ -28,6 +28,7 @@
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "echarts": "^3.1.10",
     "enzyme": "^2.3.0",
     "es6-promise": "^3.1.2",
     "eslint": "^1.10.3",

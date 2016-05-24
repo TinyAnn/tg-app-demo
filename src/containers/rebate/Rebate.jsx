@@ -1,8 +1,9 @@
 import './Rebate.scss'
 
 import React, { Component } from 'react'
-import Calendar from '../../components/calendar/Calendar'
-import Header from '../../components/header/Header'
+import Calendar from 'components/calendar/Calendar'
+import Header from 'components/header/Header'
+import Barchart from 'components/barchart/Barchart'
 
 export default class Rebate extends Component{
 	constructor(props){
@@ -19,6 +20,7 @@ export default class Rebate extends Component{
 			<div>
 				<Header title='代收返佣' onClick = { this.handleClick }/>
 				<Calendar />
+				<Barchart />
 			</div>
 		)
 	}

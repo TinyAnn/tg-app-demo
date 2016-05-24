@@ -35,7 +35,9 @@ module.exports = {
     	root:__dirname,
         alias:{
             normalize: path.resolve(normalizePath, 'normalize.css'),
-            fontAwesome: path.resolve(fontawesomePath, 'css/font-awesome.min.css')
+            fontAwesome: path.resolve(fontawesomePath, 'css/font-awesome.min.css'),
+            components: path.join(PATHS.src, 'components'),
+            containers: path.join(PATHS.src, 'containers')
         }
   	},
   	module:{

@@ -1,9 +1,9 @@
 import './AssertShow.scss'
 import React, { Component } from 'react'
 
-import ViewList from '../../components/viewlist/ViewList'
-import Header from '../../components/header/Header'
-import TabHeader from '../../components/tabheader/TabHeader'
+import ViewList from 'components/viewlist/ViewList'
+import Header from 'components/header/Header'
+import TabHeader from 'components/tabheader/TabHeader'
 
 export default class AssertShow extends Component{
 	constructor(props){
