@@ -1,5 +1,5 @@
-import './TabHeader.scss';
-import React, { Component } from 'react';
+import './TabHeader.scss'
+import React, { Component } from 'react'
 
 export default class TabHeader extends Component{
 

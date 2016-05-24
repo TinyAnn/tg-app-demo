@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "../../css/common.scss";
+@import "../../css/variables.scss";
 
 .viewList{
 	font-size: 32px;
@@ -38,4 +38,8 @@
 	border:1px solid $btnRed;
 	padding: 0px 10px;
 	border-radius:8px;
+}
+
+.row {
+  display: flex;
 }

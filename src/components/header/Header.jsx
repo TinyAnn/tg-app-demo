@@ -1,5 +1,5 @@
-import './Header.scss';
-import React, { Component } from 'react';
+import './Header.scss'
+import React, { Component } from 'react'
 
 export default class AppHeader extends Component{
 	render(){

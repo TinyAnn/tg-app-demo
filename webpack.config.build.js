@@ -3,6 +3,8 @@ const webpack           = require('webpack');
 const merge             = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const precss            = require('precss');
+const autoprefixer      = require('autoprefixer');
 
 const nodeRoot = path.join(__dirname, 'node_modules');
 
@@ -11,11 +13,12 @@ const PATHS = {
     srcCss: path.join(__dirname, 'src/css'),
   	dist: path.join(__dirname, 'dist'),
     static: path.join(__dirname, 'dist/static'),
-    devSrc: path.join(__dirname, 'build'),
+    devSrc: path.join(__dirname, 'build')
 }
 
 const normalizePath   = path.join(nodeRoot, 'normalize.css');
 const fontawesomePath = path.join(nodeRoot, 'font-awesome');
+const publicPath = __dirname.replace(/\\/g,'/')+'/dist/static/';
 
 module.exports = {
 	entry:{
@@ -24,8 +27,8 @@ module.exports = {
     },
 	output:{
 		path: PATHS.static,
-		filename: '[name].[hash].js',
-        publicPath: 'static/'
+		filename: '[name].[chunkhash].js',
+        publicPath: publicPath
 	},
 	resolve: {
     	extensions: ['', '.js', '.jsx', '.css', '.scss'],
@@ -43,11 +46,11 @@ module.exports = {
   		},{
   			test:/\.css$/,
   			loader: ExtractTextPlugin.extract('style-loader','css-loader'),
-  			include: [PATHS.src, normalizePath, fontawesomePath]
+  			include:[PATHS.src, normalizePath, fontawesomePath]
   		},{
   			test:/\.scss$/,
-  			loader: 'style!css!sass',
-  			include:PATHS.src
+            loader: ExtractTextPlugin.extract('style-loader','css!postcss!sass'),
+  			include:[PATHS.src, fontawesomePath]
   		},{
   			test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
       		loader: 'url?limit=25000',
@@ -55,6 +58,9 @@ module.exports = {
   		}],
   		noParse: ['react', 'react-dom']
   	},
+    postcss: function () {
+        return [autoprefixer, precss];
+    },
     plugins:[
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new HtmlWebpackPlugin({
@@ -62,10 +68,10 @@ module.exports = {
             filename:path.resolve(PATHS.dist,'index.html'), 
             inject: 'body',
             hash:false,
-            /*minify:{                         
+            minify:{                         
                 removeComments:true,         
                 collapseWhitespace:true,     
-            },*/
+            },
             favicon:'./src/imgs/fish.jpg'
         }),
         new webpack.optimize.UglifyJsPlugin({
@@ -73,7 +79,7 @@ module.exports = {
                 warnings:false
             }
         }),
-        new ExtractTextPlugin("styles.[hash].css")
+        new ExtractTextPlugin("[name].[chunkhash].css")
     ]
 }
 

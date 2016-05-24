@@ -1,4 +1,5 @@
 import 'normalize'
+import 'fontAwesome'
 import './css/common'
 
 import React from 'react'

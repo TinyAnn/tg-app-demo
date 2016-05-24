@@ -1,5 +1,5 @@
-import './ViewList.scss';
-import React, { Component } from 'react';
+import './ViewList.scss'
+import React, { Component } from 'react'
 
 export default class ViewList extends Component{
 	render(){

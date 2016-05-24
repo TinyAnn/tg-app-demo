@@ -13,6 +13,9 @@ export default class Calendar extends Component{
 					<span id="cld-month">05</span>月
 					<i className='fa fa-angle-right'></i>
 				</header>
+				<article>
+					<div className='mainImg'></div>
+				</article>
 			</div>
 		)
 	}
